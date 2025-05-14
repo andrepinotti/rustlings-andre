@@ -1,6 +1,8 @@
 fn main() {
     // TODO: Change the line below to fix the compiler error.
-    let x;
+    // ERRO let x;
+    // Coloque o valor que quiser no x 
+    let x = 8;
 
     if x == 10 {
         println!("x is ten!");
