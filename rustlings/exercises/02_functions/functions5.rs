@@ -1,6 +1,7 @@
-// TODO: Fix the function body without changing the signature.
+// DONE: Fix the function body without changing the signature.
+// ERROR: append 'return' in line 4
 fn square(num: i32) -> i32 {
-    num * num;
+    return num * num;
 }
 
 fn main() {
