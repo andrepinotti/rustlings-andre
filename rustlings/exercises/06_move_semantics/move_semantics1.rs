@@ -1,14 +1,20 @@
-// TODO: Fix the compiler error in this function.
+// DONE: Fix the compiler error in this function.
 fn fill_vec(vec: Vec<i32>) -> Vec<i32> {
-    let vec = vec;
+    let mut vec_new_name = vec;
 
-    vec.push(88);
+    vec_new_name.push(88);
 
-    vec
+    return vec_new_name;
 }
 
 fn main() {
     // You can optionally experiment here.
+
+    let vec = Vec::new();
+
+    let vec_example = fill_vec(vec);
+
+    println!("My vec: {:?}", vec_example);
 }
 
 #[cfg(test)]
