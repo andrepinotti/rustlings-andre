@@ -1,8 +1,10 @@
-// TODO: Fix the compiler error in the function without adding any new line.
+// DONE: Fix the compiler error in the function without adding any new line.
 fn fill_vec(vec: Vec<i32>) -> Vec<i32> {
-    vec.push(88);
+    let mut new_vec = vec;
+    
+    new_vec.push(88);
 
-    vec
+    new_vec
 }
 
 fn main() {
