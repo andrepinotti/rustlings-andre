@@ -46,6 +46,16 @@ impl State {
     fn process(&mut self, message: Message) {
         // TODO: Create a match expression to process the different message
         // variants using the methods defined above.
+        let teste = "Hello World!".to_string();
+        
+        match message {
+          Message::Resize { width, height } => "Resize",
+          Message::ChangeColor(255, 0, 255) => "Change Color",
+          Message::Echo(teste) => "Echo",
+          Message::Move(Point) => "Move",
+          Message::Quit() => "Quit",
+          _ => "Default"  
+        };
     }
 }
 
