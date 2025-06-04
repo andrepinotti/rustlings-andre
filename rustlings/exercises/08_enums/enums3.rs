@@ -4,7 +4,7 @@ struct Point {
 }
 
 enum Message {
-    Resize { width: u64, height: u64 },
+    Resize { width: u32, height: u32 },
     Move(Point),
     Echo(String),
     ChangeColor(u8, u8, u8),
@@ -48,14 +48,7 @@ impl State {
         // variants using the methods defined above.
         let teste = "Hello World!".to_string();
         
-        match message {
-          Message::Resize { width, height } => "Resize",
-          Message::ChangeColor(255, 0, 255) => "Change Color",
-          Message::Echo(teste) => "Echo",
-          Message::Move(Point) => "Move",
-          Message::Quit() => "Quit",
-          _ => "Default"  
-        };
+   
     }
 }
 
@@ -70,12 +63,12 @@ mod tests {
     #[test]
     fn test_match_message_call() {
         let mut state = State {
-            width: 0,
-            height: 0,
-            position: Point { x: 0, y: 0 },
-            message: String::from("hello world"),
-            color: (0, 0, 0),
-            quit: false,
+            width: 10,
+            height: 30,
+            position: Point { x: 10, y: 15 },
+            message: String::from("Hello world!"),
+            color: (255, 0, 255),
+            quit: true,
         };
 
         state.process(Message::Resize {
