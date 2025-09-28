@@ -11,7 +11,7 @@ mod tests {
 
         // TODO: Make this an if-let statement whose value is `Some`.
         // word = optional_target {
-        //     assert_eq!(word, target);
+        //     assert_eq!(word, Some(target));
         // }
 
         // DONE 
@@ -40,9 +40,12 @@ mod tests {
         //     cursor -= 1;
         // }
 
-        while let integer = optional_integers.pop() {
-            assert_eq!(integer, Some(Some(cursor)));
-            cursor -= 1;
+
+        while let Some(integer) = optional_integers.pop() {
+            if let Some(integer) = integer {  
+                assert_eq!(integer, cursor);
+                cursor -= 1;
+            }      
         }
 
         assert_eq!(cursor, 0);
